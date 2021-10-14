@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Display: flex nav</title>
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="stylesheet"
+      href="css/font-awesome-4.6.3/css/font-awesome.min.css"
+    />
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        color: white;
+        color: #0d1313;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      header {
+        background: #0d1313;
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+      }
+
+      .logo {
+        color: white;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        padding: 10px;
+      }
+
+      nav {
+        color: #0d1313;
+        display: flex;
+        margin: 0; 
+        padding: 0;
+        list-style:none;
+        justify-content: flex-start;
+        position: relative;
+        top: 0;
+        width: 100%;
+      }
+
+      nav li {
+        display: flex;
+      } 
+
+      nav a {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 4px 8px;
+        border: 1px solid #62debe;
+        display: inline-block;
+        background-image: linear-gradient(
+          to bottom,
+          rgb(165, 237, 255) 0%,
+          rgb(149, 232, 218) 6%,
+          rgb(162, 232, 253) 94%,
+          rgb(162, 242, 253) 100%,
+        );
+        transition: all 0.25s linear;
+      }
+      
+      nav li a.active {
+        background-image: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(224,226,240,1) 6%,rgba(254,254,254,1) 53%);
+        border-bottom: none;
+        padding-right: 6rem;
+      
+      }
+
+      nav li a:hover {
+        background-image: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(224,226,240,1) 6%,rgba(254,254,254,1) 53%);
+        border-bottom: none;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav a {
+        text-transform: uppercase;
+        color: #cdd0d0;
+        padding: 20px;
+        display: inline-block;
+      }
+      
+      a.active {
+        font-weight: bold;
+        color: #62debe;
+        background: #444;
+      }
+
+      header .sign-out-link {
+        color: #62debe;
+        font-size: 0.8rem;
+        margin-left: auto;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: all 1 ease;
+      }
+
+      header a.sign-out-link:hover {
+        transform: rotate(0deg) scale(1.2);
+      }
+
+      article {
+        padding: 1rem;
+        color: #333;
+        line-height: 24px;
+      }
+      h2 {
+        text-transform: capitalize;
+        font-size: 2.75rem;
+        letter-spacing: -1px;
+      }
+
+      /*added for responsive*/
+      @media (max-width: 600px) {
+        header {
+          flex-wrap: wrap;
+        }
+        nav {
+          order: 2;
+          background: #333;
+          width: 100%;
+        }
+      }
+      .wrapper {
+        width: 100%;
+        margin: auto;
+      }
+      
+      .img-juices {
+        width: 100%;
+        height: auto;
+      }
+
+      .modal {
+        max-width: 600px;
+        min-width: 400px;
+        padding: 2rem;
+        border-radius: 5px;
+        min-height: 200px;
+        border: 2px solid;
+        background: white;
+        transform: translateY(200%);
+        transition: transform 1s;
+      }
+
+      .modal-outer.open .modal{
+        transform: translateY(0);
+      }
+
+      .open {
+        display: block;
+      }
+
+      .closer {
+        position: relative;
+        top: -10px;
+        right: -10px;
+        width: 1.5rem;
+        height: 1.5rem;
+        background: #fff;
+        color: black;
+        border: 2px solid;
+        border-radius: 100%;
+        text-align: center;
+        line-height: 1.5rem;
+        cursor: pointer;
+      }
+
+      .modal-outer {
+      display: grid;
+      background: rgba(0, 0, 0, 0.5);
+      position: fixed;
+      height: 100vh;
+      width: 100vw;
+      top: 0;
+      left: 0;
+      justify-content: center;
+      align-items: center;
+      /* Hide this until we need it */
+      opacity: 0;
+      pointer-events: none;
+      transition: all 1s ease;
+    }
+
+    .modal-outer.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    </style>
+  </head>
+  <body id="p-reviews">
+    <header>
+    <a href="#" class="logo"><i class="fa fa-bullseye fa-3x"></i></a>
+      <nav>
+        <ul id="nav">
+          <li class="t-recipes"><a class="active" href="#01">Recipes</a></li>
+          <li class="t-reviews"><a href="#02">Reviews</a></li>
+          <li class="t-delivery"><a href="#03">Delivery</a></li>
+        </ul>
+      </nav>
+      <a href="#" class="sign-out-link">Sign Out</a>
+    </header>
+     
+    <p style="padding: 4rem 2rem 2rem 2rem;"></p><p style="color:#0d1313;"></p>
+
+    <main class="content">
+      <img src="juices.png">
+      <div class="wrapper"> 
+        <article>
+          <h2>Welcome</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur luctus dui a tempor iaculis. Sed egestas ullamcorper auctor. Suspendisse convallis arcu tristique ex condimentum, nec pharetra risus faucibus. Nullam in condimentum quam. Pellentesque scelerisque, nulla sit amet blandit lobortis, diam erat tempus mauris, vitae semper dui velit ut tortor. Maecenas ut mattis velit, ut lacinia libero. Curabitur viverra ut ex non egestas. Vivamus sollicitudin enim ac erat tristique, et feugiat turpis tempor.</p>
+        </article>
+      </div>
+    </main>
+
+<!-- // modal in index // -->
+  <div class="modal-outer">
+  <div class="modal">
+  <h4>Ready to Sign out?</h4>
+  <p>Thank you for your visit. We hope to see you soon!</p>
+  <a class="closer" href="#0">x</a>
+  </div>
+  </div>
+
+    <script>
+      var mainNav = document.querySelectorAll("nav a");
+      document.addEventListener("click", showActive);
+
+      function showActive(event) {
+        event.preventDefault();
+        if (event.target.matches("nav a")) {
+          for (let navItem of mainNav) {
+            navItem.classList.remove("active");
+          }
+          event.target.classList.add("active");
+        }
+      }
+
+//hash event//
+var hash01 = 'Recipes. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio maiores adipisci quibusdam repudiandae dolor vero placeat esse sit! Quibusdam saepe aperiam explicabo placeat optio, consequuntur nihil voluptatibus expedita quia vero perferendis, deserunt et incidunt eveniet temporibus doloremque possimus facilis.'
+
+var hash02 = 'Reviews. Asperiores laudantium, rerum ratione consequatur, culpa consectetur possimus atque ab tempore illum non dolor nesciunt. Neque, rerum. A vel non incidunt, quod doloremque dignissimos necessitatibus aliquid laboriosam architecto at cupiditate commodi expedita in, quae blanditiis.'
+
+var hash03 = 'Delivery. Possimus labore, officia dolore! Eaque ratione saepe, alias harum laboriosam deserunt laudantium blanditiis eum explicabo placeat reiciendis labore iste sint. Consectetur expedita dignissimos, non quos distinctio, eos rerum facilis eligendi.'
+
+var tabs = document.querySelectorAll('#nav a')
+var contentPara = document.querySelector('p')
+tabs.forEach( tab => tab.addEventListener('click', makeActive))
+
+contentPara.innerHTML = hash01
+
+function makeActive(){
+  makeInactive()
+  this.classList.add('active')
+  if (this.hash == '#01'){
+    contentPara.innerHTML = hash01
+  } else if (this.hash == '#02'){
+    contentPara.innerHTML = hash02
+  } else if (this.hash == '#03'){
+    contentPara.innerHTML = hash03
+  } 
+  event.preventDefault()
+}
+
+function makeInactive(){
+  tabs.forEach( tab => tab.classList.remove('active'))
+}
+
+//modal and popover//
+var modalOuter = document.querySelector('.modal-outer')
+var modalInner = document.querySelector('.modal')
+
+var signOutLinkContent = `
+<h4>Ready to Sign out?</h4>
+<p>Thank you for your visit. We hope to see you soon!</p>
+<a class="closer" href="#0">x</a>
+`
+var buttonContent = `
+<h5>New recipes drop every Monday!</h5>
+<p>check out your notifications for more updates about our latest drop and deals.</p>
+<a class="closer" href="#0">x</a>
+`
+
+function showPopover (event) {
+  if (event.target.matches('.singOutLink')) {
+    modalInner.innerHTML = signOutLinkContent
+    modalOuter.classList.add('open')
+  } else if (event.target.closest('.logo')){
+    modalInner.innerHTML = buttonContent
+    modalOuter.classList.add('open')
+  } else if (event.target.matches('.closer, .modal-outer')) {
+    modalOuter.classList.remove('open')
+  } else return
+  // event.preventDefault()
+}
+
+document.addEventListener('click', showPopover)
+
+
+    </script>
+  </body>
+</html>
