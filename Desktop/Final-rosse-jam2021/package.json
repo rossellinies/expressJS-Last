@@ -1,0 +1,27 @@
+{
+  "name": "Final-rossejam-2021",
+  "version": "1.0.0",
+  "description": "## Final",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rossellinies/JAMStack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rossellinies/JAMStack/issues"
+  },
+  "homepage": "https://github.com/rossellinies/JAMStack#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "prettier": "^2.4.1"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.5"
+  }
+}
